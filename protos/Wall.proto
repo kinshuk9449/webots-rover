@@ -1,0 +1,29 @@
+PROTO Wall [
+  field SFVec3f    translation  0 0 0
+  field SFRotation rotation     0 1 0 0
+  field SFFloat    bodyMass     1
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    children [
+        DEF WALL_Shape Shape{
+            appearance  PBRAppearance {
+          baseColor 0.12549 0.290196 0.529412
+          roughness 1
+          metalness 0
+          baseColorMap ImageTexture {
+                          url "textures/old_brick_wall.jpg"
+                      }
+        }
+        geometry Box {
+          size 1.1 0.1 0.1
+        }
+
+        }
+    ]
+    boundingObject USE WALL_Shape
+
+        }
+}

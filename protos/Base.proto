@@ -1,0 +1,15 @@
+PROTO Base [
+  field SFVec3f    translation  0 0 0
+  field SFRotation rotation     0 1 0 0
+]
+{
+  Floor {
+    translation IS translation
+    rotation IS rotation
+    name "floor"
+    size 1 1
+    tileSize 0.25 0.25
+    appearance ChequeredParquetry{}
+
+        }
+}
